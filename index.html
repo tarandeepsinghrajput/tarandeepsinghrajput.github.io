@@ -79,47 +79,10 @@
   cursor: pointer;
   transition: 0.5s;
 }
-
-    /* Initial stacked position */
-    .tile {
-      top: 25%;
-      left: 25%;
-    }
-
-    /* Explosion positions */
-    .explosion-container.active .t1 {
-      top: 0;
-      left: 0;
-      opacity: 1;
-    }
-
-    .explosion-container.active .t2 {
-      top: 0;
-      left: 50%;
-      opacity: 1;
-    }
-
-    .explosion-container.active .t3 {
-      top: 50%;
-      left: 0;
-      opacity: 1;
-    }
-
-    .explosion-container.active .t4 {
-      top: 50%;
-      left: 50%;
-      opacity: 1;
-    }
-
-    /* Image slicing */
-    .t1 { background-position: 0 0; }
-    .t2 { background-position: -400px 0; }
-    .t3 { background-position: 0 -400px; }
-    .t4 { background-position: -400px -400px; }
-
-    .tile:hover {
-      transform: scale(1.05);
-    }
+.tile:hover {
+  transform: scale(1.05);
+  filter: brightness(0.7);
+}
 
   </style>
 
@@ -155,12 +118,15 @@
 
 <!-- EXPLOSION SECTION -->
 <section>
-  <div class="explosion-container" id="explosion">
+  <div class="explosion-container">
 
-    <div class="tile t1"><span>Articles</span></div>
-    <div class="tile t2"><span>Blogs</span></div>
-    <div class="tile t3"><span>Movies</span></div>
-    <div class="tile t4"><span>Books</span></div>
+    <div class="tile" onclick="window.location='articles.html'">Articles</div>
+
+    <div class="tile" onclick="window.location='blogs.html'">Blogs</div>
+
+    <div class="tile" onclick="alert('Movies coming soon')">Movies</div>
+
+    <div class="tile" onclick="alert('Books coming soon')">Books</div>
 
   </div>
 </section>
