@@ -53,78 +53,77 @@
       text-decoration: none;
       color: black;
     }
-    .image-box {
-  position: relative;
-  overflow: hidden;
-}
 
-.image-box img {
-  width: 100%;
-  height: 350px;
-  object-fit: cover;
-  transition: 0.5s;
-}
+    /* EXPLOSION EFFECT */
 
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.6);
-  color: white;
+    .explosion-container {
+      position: relative;
+      width: 400px;
+      height: 400px;
+      margin: auto;
+      cursor: pointer;
+    }
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+    .tile {
+      position: absolute;
+      width: 50%;
+      height: 50%;
+      background-image: url("https://picsum.photos/800/800");
+      background-size: 800px 800px;
 
-  opacity: 0;
-  transition: 0.5s;
-  text-align: center;
-}
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-.image-box:hover img {
-  transform: scale(1.1);
-}
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
 
-.image-box:hover .overlay {
-  opacity: 1;
-}
-    .content-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  width: 100%;
-  max-width: 1200px;
-}
+      opacity: 0;
+      transition: 0.8s;
+    }
 
-.item {
-  text-decoration: none;
-  color: black;
-  text-align: center;
-  transition: 0.3s;
-}
+    /* Initial stacked position */
+    .tile {
+      top: 25%;
+      left: 25%;
+    }
 
-.item img {
-  width: 100%;
-  height: 350px;
-  object-fit: cover;
-}
+    /* Explosion positions */
+    .explosion-container.active .t1 {
+      top: 0;
+      left: 0;
+      opacity: 1;
+    }
 
-.item h3 {
-  margin-top: 15px;
-  font-size: 20px;
-}
+    .explosion-container.active .t2 {
+      top: 0;
+      left: 50%;
+      opacity: 1;
+    }
 
-.item p {
-  font-size: 14px;
-  color: #555;
-}
+    .explosion-container.active .t3 {
+      top: 50%;
+      left: 0;
+      opacity: 1;
+    }
 
-.item:hover {
-  transform: translateY(-8px);
-}
+    .explosion-container.active .t4 {
+      top: 50%;
+      left: 50%;
+      opacity: 1;
+    }
+
+    /* Image slicing */
+    .t1 { background-position: 0 0; }
+    .t2 { background-position: -400px 0; }
+    .t3 { background-position: 0 -400px; }
+    .t4 { background-position: -400px -400px; }
+
+    .tile:hover {
+      transform: scale(1.05);
+    }
+
   </style>
 
 </head>
@@ -157,54 +156,14 @@
   </div>
 </section>
 
+<!-- EXPLOSION SECTION -->
 <section>
- <div class="content-grid">
+  <div class="explosion-container" id="explosion">
 
-  <!-- Articles -->
-  <a href="articles.html" class="item">
-    <div class="image-box">
-      <img src="https://picsum.photos/500/600?1">
-      <div class="overlay">
-        <h3>Articles</h3>
-        <p>Research and legal writing</p>
-      </div>
-    </div>
-  </a>
-
-  <!-- Blogs -->
-  <a href="blogs.html" class="item">
-    <div class="image-box">
-      <img src="https://picsum.photos/500/600?2">
-      <div class="overlay">
-        <h3>Blogs</h3>
-        <p>Thoughts and insights</p>
-      </div>
-    </div>
-  </a>
-
-  <!-- Movies -->
-  <a href="#" class="item">
-    <div class="image-box">
-      <img src="https://picsum.photos/500/600?3">
-      <div class="overlay">
-        <h3>Movies</h3>
-        <p>Recommendations and reviews</p>
-      </div>
-    </div>
-  </a>
-
-  <!-- Books -->
-  <a href="#" class="item">
-    <div class="image-box">
-      <img src="https://picsum.photos/500/600?4">
-      <div class="overlay">
-        <h3>Books</h3>
-        <p>Reading and notes</p>
-      </div>
-    </div>
-  </a>
-
-</div>
+    <div class="tile t1"><span>Articles</span></div>
+    <div class="tile t2"><span>Blogs</span></div>
+    <div class="tile t3"><span>Movies</span></div>
+    <div class="tile t4"><span>Books</span></div>
 
   </div>
 </section>
@@ -218,6 +177,8 @@
     </p>
   </div>
 </section>
+
+<!-- GSAP -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
@@ -236,5 +197,20 @@
     });
   });
 </script>
+
+<!-- EXPLOSION LOGIC -->
+<script>
+  const container = document.getElementById("explosion");
+
+  container.addEventListener("click", () => {
+    container.classList.toggle("active");
+  });
+
+  document.querySelector(".t1").onclick = () => window.location = "articles.html";
+  document.querySelector(".t2").onclick = () => window.location = "blogs.html";
+  document.querySelector(".t3").onclick = () => alert("Movies coming soon");
+  document.querySelector(".t4").onclick = () => alert("Books coming soon");
+</script>
+
 </body>
 </html>
