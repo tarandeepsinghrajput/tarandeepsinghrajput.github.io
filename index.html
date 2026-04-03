@@ -55,33 +55,30 @@
     }
 
     /* EXPLOSION EFFECT */
+.explosion-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+  .tile {
+  width: 200px;
+  height: 250px;
+  background-image: url("https://picsum.photos/800/800");
+  background-size: cover;
 
-    .explosion-container {
-      position: relative;
-      width: 400px;
-      height: 400px;
-      margin: auto;
-      cursor: pointer;
-    }
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    .tile {
-      position: absolute;
-      width: 50%;
-      height: 50%;
-      background-image: url("https://picsum.photos/800/800");
-      background-size: 800px 800px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      color: white;
-      font-weight: bold;
-      font-size: 18px;
-
-      opacity: 0;
-      transition: 0.8s;
-    }
+  cursor: pointer;
+  transition: 0.5s;
+}
 
     /* Initial stacked position */
     .tile {
