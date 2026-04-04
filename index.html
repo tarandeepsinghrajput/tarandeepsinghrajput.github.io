@@ -2,9 +2,12 @@
 <html>
 <head>
   <title>Tarandeep Singh Rajput</title>
+  
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  
   <style>
-:root {
+
+    :root {
   --bg: #0A0A0A;
   --text: #FFFFFF;
   --subtext: #A0A0A0;
@@ -19,9 +22,13 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background: var(--bg);
-  color: var(--text);
+  font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 0.5px;
+}
 }
 
 section {
@@ -68,7 +75,14 @@ p {
 }
 
 /* GRID SECTION */
-.grid {
+<section>
+  <div class="container">
+    <h2>Explore</h2>
+  </div>
+
+  <div class="grid">
+    
+    .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
@@ -77,25 +91,26 @@ p {
 }
 
 .card {
-  border: 1px solid #333;
-  padding: 40px 20px;
-  text-align: center;
+  border: 1px solid #222;
+  padding: 50px 25px;
+  text-align: left;
   transition: 0.3s;
   cursor: pointer;
+  background: #0F0F0F;
 }
 
 .card h3 {
-  margin-bottom: 10px;
-  font-size: 20px;
+  font-size: 22px;
 }
 
 .card p {
+  margin-top: 10px;
   font-size: 14px;
 }
 
 .card:hover {
-  background: #111;
   border-color: var(--accent);
+  transform: translateY(-5px);
 }
 
 /* RESPONSIVE */
@@ -120,10 +135,14 @@ p {
 <section>
   <div class="container">
     <h1>Tarandeep Singh Rajput</h1>
-    <p>Property Law. Transactions. Due Diligence.</p>
+    <p style="margin-top:10px;">
+      Property Law. Transactions. Due Diligence.
+    </p>
 
-    <a class="btn" href="articles.html">View Articles</a>
-    <a class="btn" href="resume.html">View Resume</a>
+    <div style="margin-top:30px;">
+      <a class="btn" href="articles.html">View Articles</a>
+      <a class="btn" href="resume.html">View Resume</a>
+    </div>
   </div>
 </section>
 
