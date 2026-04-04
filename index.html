@@ -2,12 +2,11 @@
 <html>
 <head>
   <title>Tarandeep Singh Rajput</title>
-  
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-  
-  <style>
 
-    :root {
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+:root {
   --bg: #0A0A0A;
   --text: #FFFFFF;
   --subtext: #A0A0A0;
@@ -23,12 +22,13 @@
 
 body {
   font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
 }
 
 h1, h2, h3 {
   font-family: 'Playfair Display', serif;
   letter-spacing: 0.5px;
-}
 }
 
 section {
@@ -36,6 +36,7 @@ section {
   min-height: 80vh;
   display: flex;
   align-items: center;
+  border-bottom: 1px solid #111;
 }
 
 .container {
@@ -74,15 +75,8 @@ p {
   color: var(--bg);
 }
 
-/* GRID SECTION */
-<section>
-  <div class="container">
-    <h2>Explore</h2>
-  </div>
-
-  <div class="grid">
-    
-    .grid {
+/* GRID */
+.grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
@@ -168,6 +162,10 @@ p {
 
 <!-- GRID SECTION -->
 <section>
+  <div class="container">
+    <h2>Explore</h2>
+  </div>
+
   <div class="grid">
 
     <div class="card" onclick="window.location='articles.html'">
