@@ -42,12 +42,13 @@ section {
 .container {
   max-width: 1100px;
   margin: auto;
-  text-align: center;
+  width: 100%;
 }
 
 h1 {
   font-size: 48px;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 h2 {
@@ -80,8 +81,7 @@ p {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
-  max-width: 1100px;
-  margin: auto;
+  margin-top: 10px;
 }
 
 .card {
@@ -127,7 +127,7 @@ p {
 
 <!-- HERO -->
 <section>
-  <div class="container">
+  <div class="container" style="text-align:center;">
     <h1>Tarandeep Singh Rajput</h1>
     <p style="margin-top:10px;">
       Property Law. Transactions. Due Diligence.
@@ -142,7 +142,7 @@ p {
 
 <!-- ABOUT -->
 <section>
-  <div class="container">
+  <div class="container" style="text-align:center;">
     <h2>About</h2>
     <p>
       Fourth-year B.A. LL.B. (Hons.) student focused on corporate transactions,
@@ -153,7 +153,7 @@ p {
 
 <!-- RESUME -->
 <section>
-  <div class="container">
+  <div class="container" style="text-align:center;">
     <h2>Resume</h2>
     <p>View my complete professional experience</p>
     <a class="btn" href="resume.html">View Resume</a>
@@ -163,29 +163,31 @@ p {
 <!-- GRID SECTION -->
 <section>
   <div class="container">
-    <h2>Explore</h2>
-  </div>
 
-  <div class="grid">
+    <h2 style="text-align:left; margin-bottom:40px;">Explore</h2>
 
-    <div class="card" onclick="window.location='articles.html'">
-      <h3>Articles</h3>
-      <p>Structured legal insights</p>
-    </div>
+    <div class="grid">
 
-    <div class="card" onclick="window.location='blogs.html'">
-      <h3>Blogs</h3>
-      <p>Practical thoughts and notes</p>
-    </div>
+      <div class="card" onclick="window.location='articles.html'">
+        <h3>Articles</h3>
+        <p>Structured legal insights</p>
+      </div>
 
-    <div class="card" onclick="alert('Movies coming soon')">
-      <h3>Movies</h3>
-      <p>Recommendations and reviews</p>
-    </div>
+      <div class="card" onclick="window.location='blogs.html'">
+        <h3>Blogs</h3>
+        <p>Practical thoughts and notes</p>
+      </div>
 
-    <div class="card" onclick="alert('Books coming soon')">
-      <h3>Books</h3>
-      <p>Reading list and summaries</p>
+      <div class="card" onclick="alert('Movies coming soon')">
+        <h3>Movies</h3>
+        <p>Recommendations and reviews</p>
+      </div>
+
+      <div class="card" onclick="alert('Books coming soon')">
+        <h3>Books</h3>
+        <p>Reading list and summaries</p>
+      </div>
+
     </div>
 
   </div>
@@ -193,7 +195,7 @@ p {
 
 <!-- CONTACT -->
 <section>
-  <div class="container">
+  <div class="container" style="text-align:center;">
     <h2>Contact</h2>
     <p>
       <a href="mailto:tarandeepsinghrajput@gmail.com">Email</a><br>
