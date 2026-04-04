@@ -3,88 +3,129 @@
 <head>
   <title>Tarandeep Singh Rajput</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+ <style>
+:root {
+  --bg: #0A0A0A;
+  --text: #FFFFFF;
+  --subtext: #A0A0A0;
+  --accent: #D4AF37;
+}
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #ffffff;
-      color: #111;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
 
-    section {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 60px 20px;
-    }
+body {
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
 
-    .container {
-      max-width: 900px;
-      text-align: center;
-    }
+section {
+  padding: 80px 20px;
+}
 
-    h1 {
-      font-size: 42px;
-      margin-bottom: 10px;
-    }
+.container {
+  max-width: 1100px;
+  margin: auto;
+  text-align: center;
+}
 
-    h2 {
-      font-size: 28px;
-      margin-bottom: 15px;
-    }
+h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
 
-    p {
-      font-size: 16px;
-      line-height: 1.7;
-    }
+h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
 
-    .btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
-      border: 1px solid black;
-      text-decoration: none;
-      color: black;
-    }
+p {
+  color: var(--subtext);
+  line-height: 1.7;
+}
 
-    /* EXPLOSION EFFECT */
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  border: 1px solid var(--text);
+  color: var(--text);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: var(--text);
+  color: var(--bg);
+}
+
+/* TILE SECTION */
 .explosion-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: auto;
 }
-  .tile {
-  width: 200px;
+
+.tile {
+  position: relative;
   height: 250px;
-  background-image: url("https://picsum.photos/800/800");
-  background-size: cover;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-
+  overflow: hidden;
   cursor: pointer;
-  transition: 0.5s;
-}
-.tile:hover {
-  transform: scale(1.05);
-  filter: brightness(0.7);
 }
 
-  </style>
+.tile::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.4s ease;
+}
+
+.tile::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0);
+  transition: 0.4s ease;
+}
+
+.tile span {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  font-size: 20px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: 0.3s ease;
+}
+
+.tile:hover::before {
+  transform: scale(1.08);
+}
+
+.tile:hover::after {
+  background: rgba(0,0,0,0.6);
+}
+
+.tile:hover span {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.t1::before { background-image: url("https://picsum.photos/800/800?1"); }
+.t2::before { background-image: url("https://picsum.photos/800/800?2"); }
+.t3::before { background-image: url("https://picsum.photos/800/800?3"); }
+.t4::before { background-image: url("https://picsum.photos/800/800?4"); }
+
+</style>
 
 </head>
 
