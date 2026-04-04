@@ -3,7 +3,7 @@
 <head>
   <title>Tarandeep Singh Rajput</title>
 
- <style>
+  <style>
 :root {
   --bg: #0A0A0A;
   --text: #FFFFFF;
@@ -66,6 +66,8 @@ p {
   background: var(--text);
   color: var(--bg);
 }
+
+/* GRID SECTION */
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -93,9 +95,60 @@ p {
 
 .card:hover {
   background: #111;
-  border-color: #D4AF37;
+  border-color: var(--accent);
 }
-   <section>
+
+/* RESPONSIVE */
+@media (max-width: 1000px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- HERO -->
+<section>
+  <div class="container">
+    <h1>Tarandeep Singh Rajput</h1>
+    <p>Property Law. Transactions. Due Diligence.</p>
+
+    <a class="btn" href="articles.html">View Articles</a>
+    <a class="btn" href="resume.html">View Resume</a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section>
+  <div class="container">
+    <h2>About</h2>
+    <p>
+      Fourth-year B.A. LL.B. (Hons.) student focused on corporate transactions,
+      due diligence, and contract drafting.
+    </p>
+  </div>
+</section>
+
+<!-- RESUME -->
+<section>
+  <div class="container">
+    <h2>Resume</h2>
+    <p>View my complete professional experience</p>
+    <a class="btn" href="resume.html">View Resume</a>
+  </div>
+</section>
+
+<!-- GRID SECTION -->
+<section>
   <div class="grid">
 
     <div class="card" onclick="window.location='articles.html'">
@@ -120,69 +173,13 @@ p {
 
   </div>
 </section>
-   @media (max-width: 1000px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
 
-@media (max-width: 600px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
-}
-</style>
-
-</head>
-
-<body>
-
-<section>
-  <div class="container">
-    <h1>Tarandeep Singh Rajput</h1>
-    <p>Legal | Transactions | Due Diligence</p>
-    <a class="btn" href="#about">Enter</a>
-  </div>
-</section>
-
-<section id="about">
-  <div class="container">
-    <h2>About</h2>
-    <p>
-      Fourth-year B.A. LL.B. (Hons.) student focused on corporate transactions,
-      due diligence, and contract drafting.
-    </p>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <h2>Resume</h2>
-    <p>View my complete professional experience</p>
-    <a class="btn" href="resume.html">View Resume</a>
-  </div>
-</section>
-
-<!-- EXPLOSION SECTION -->
-<section>
-  <div class="explosion-container">
-
-    <div class="tile" onclick="window.location='articles.html'">Articles</div>
-
-    <div class="tile" onclick="window.location='blogs.html'">Blogs</div>
-
-    <div class="tile" onclick="alert('Movies coming soon')">Movies</div>
-
-    <div class="tile" onclick="alert('Books coming soon')">Books</div>
-
-  </div>
-</section>
-
+<!-- CONTACT -->
 <section>
   <div class="container">
     <h2>Contact</h2>
     <p>
-      <a href="mailto:tarandeepsinghrajput@gmail.com">Email</a> |
+      <a href="mailto:tarandeepsinghrajput@gmail.com">Email</a><br>
       <a href="tel:+917666882516">Call</a>
     </p>
   </div>
@@ -193,33 +190,19 @@ p {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
 <script>
-  gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger);
 
-  gsap.utils.toArray("section").forEach((section) => {
-    gsap.from(section, {
-      opacity: 0,
-      y: 100,
-      duration: 1,
-      scrollTrigger: {
-        trigger: section,
-        start: "top 80%",
-      }
-    });
+gsap.utils.toArray("section").forEach((section) => {
+  gsap.from(section, {
+    opacity: 0,
+    y: 80,
+    duration: 0.8,
+    scrollTrigger: {
+      trigger: section,
+      start: "top 85%",
+    }
   });
-</script>
-
-<!-- EXPLOSION LOGIC -->
-<script>
-  const container = document.getElementById("explosion");
-
-  container.addEventListener("click", () => {
-    container.classList.toggle("active");
-  });
-
-  document.querySelector(".t1").onclick = () => window.location = "articles.html";
-  document.querySelector(".t2").onclick = () => window.location = "blogs.html";
-  document.querySelector(".t3").onclick = () => alert("Movies coming soon");
-  document.querySelector(".t4").onclick = () => alert("Books coming soon");
+});
 </script>
 
 </body>
